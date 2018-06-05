@@ -36,3 +36,29 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+var allCards = document.querySelectorAll(".card");
+var openCards = [];
+
+// CAN'T ATTACH AN EVENT LISTENER TO NODE LIST 
+// WHICH IS WHAT ALL CARDS ARE
+// SO LOOP OVER EACH ONE TO ADD HANDLERS
+allCards.forEach(function(card) {
+	card.addEventListener('click', function(e) {
+		openCards.push(card);
+		card.classList.add('open', 'show');
+		console.log("Open Cards: ", openCards.length);	
+
+		if (openCards.length == 2) {
+			setTimeout(function() {
+				openCards.forEach(function(card) {
+					card.classList.remove('open', 'show');
+				});
+				openCards = [];
+			}, 1000);
+		} 
+	});
+});
+
+
+
