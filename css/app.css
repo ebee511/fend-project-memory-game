@@ -107,3 +107,120 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.timer {
+    display: inline-block;
+    margin-left: 80px;
+}
+
+/*
+ * Styles for the Modal
+ */
+
+.modal_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+}
+
+.modal_body {
+    position: relative;
+    width: 400px;
+    top: 35%;
+    margin: auto;
+    background: #fff;
+}
+
+.modal_heading {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.modal_stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.modal_buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.modal_button {
+    width: 60px;
+    height: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+.modal_results, 
+.modal_title {
+    text-align: center;
+}
+
+ @media screen and (min-width: 620px) and (max-width: 750px) {
+    .deck {
+        width: 600px;
+        min-height: 570px;
+    }
+
+    .deck .card {
+        height: 110px;
+        width: 115px;
+    }
+ }
+
+@media screen and (min-width: 535px) and (max-width: 619px) {
+    .deck {
+        width: 520px;
+        min-height: 570px;
+    }
+
+    .deck .card {
+        height: 90px;
+        width: 95px;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 534px) {
+    .deck {
+        width: 450px;
+        min-height: 520px;
+    }
+
+    .deck .card {
+        height: 80px;
+        width: 85px;
+    }
+}
+
+@media screen and (max-width: 459px) {
+    .deck {
+        width: 300px;
+        min-height: 350px;
+    }
+
+    .deck .card {
+        height: 50px;
+        width: 55px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .score-panel {
+        width: 300px;
+    }
+
+    .score-panel .restart {
+        margin-left: 15px;
+    }
+}
