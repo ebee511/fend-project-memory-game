@@ -11,6 +11,8 @@ var cardList = ['fa-diamond', 'fa-diamond',
 								'fa-bomb', 'fa-bomb',
 								];
 
+
+// Credit: https://www.youtube.com/watch?v=_rUH-sEs68Y
 // function create cards dynamically
 function generateCard(card) {
 	return `<li class="card" data-card="${card}"><i class="fa ${card}"></i></li>`;
@@ -36,6 +38,7 @@ var matchedCards = [];
 // CAN'T ATTACH AN EVENT LISTENER TO NODE LIST 
 // WHICH IS WHAT ALL CARDS ARE
 // SO LOOP OVER EACH ONE TO ADD HANDLERS
+// Credit: https://www.youtube.com/watch?v=_rUH-sEs68Y
 allCards.forEach(function(card) {
 
 	card.addEventListener('click', function(e) {
@@ -48,8 +51,6 @@ allCards.forEach(function(card) {
 		if (!card.classList.contains('open') && !card.classList.contains('show') && !card.classList.contains('match') && openCards.length < 2) {
 				openCards.push(card);
 				card.classList.add('open', 'show');
-
-				// if ()
 
 				// If cards don't match - go away
 				if (openCards.length == 2) {
