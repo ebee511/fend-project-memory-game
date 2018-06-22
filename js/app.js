@@ -42,11 +42,6 @@ var matchedCards = [];
 allCards.forEach(function(card) {
 
 	card.addEventListener('click', function(e) {
-		moveCounter();
-
-		if (moveCount === 1) {
-			startTimer();
-		}
 
 		if (!card.classList.contains('open') && !card.classList.contains('show') && !card.classList.contains('match') && openCards.length < 2) {
 				openCards.push(card);
@@ -54,22 +49,27 @@ allCards.forEach(function(card) {
 
 				// If cards don't match - go away
 				if (openCards.length == 2) {
-						// If cards match
-						if (openCards[0].dataset.card === openCards[1].dataset.card) {
-							openCards.forEach(function(card) {
-								card.classList.add('match');
-								matchedCards.push(card);
-							})
-						}
+						moveCounter();
 
-						// If no match, flip cards over
-						setTimeout(function() {
-							openCards.forEach(function(card) {
-								card.classList.remove('open', 'show');
-							});
+					if (moveCount === 1) {
+						startTimer();
+					}
+					// If cards match
+					if (openCards[0].dataset.card === openCards[1].dataset.card) {
+						openCards.forEach(function(card) {
+							card.classList.add('match');
+							matchedCards.push(card);
+						})
+					}
 
-							openCards = [];
-						}, 1000);
+					// If no match, flip cards over
+					setTimeout(function() {
+						openCards.forEach(function(card) {
+							card.classList.remove('open', 'show');
+						});
+
+						openCards = [];
+					}, 1000);
 				}
 
 				if (matchedCards.length === 16) {
