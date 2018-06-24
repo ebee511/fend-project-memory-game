@@ -21,7 +21,7 @@ function generateCard(card) {
 function initGame() {
 		var deck = document.querySelector('.deck');
 		var cardHTML = cardList.map(function(card) {
-			return generateCard(card)
+			return generateCard(card);
 		});
 
 		deck.innerHTML = cardHTML.join('');
@@ -59,7 +59,7 @@ allCards.forEach(function(card) {
 						openCards.forEach(function(card) {
 							card.classList.add('match');
 							matchedCards.push(card);
-						})
+						});
 					}
 
 					// If no match, flip cards over
@@ -76,7 +76,7 @@ allCards.forEach(function(card) {
 					toggleModal();
 					stopTimer();
 				}
-		};
+		}
 	});
 });
 
@@ -136,7 +136,7 @@ function moveCounter() {
 	moveCount++;
 	counter[0].innerHTML = moveCount; //grabs the element from the node and resets it to moveCount
 	starRating(moveCount);
-};
+}
 
 // Remove stars function
 var starsList = document.querySelectorAll('ul.stars'); //get the parent element
