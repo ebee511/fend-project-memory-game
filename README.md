@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Dependencies] (#dependencies)
+* [Dependencies](#dependencies)
 * [Contributing](#contributing)
 
 ## Instructions
